@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292417144349",
+    "project_id": "ecommerceapp-edea7",
+    "storage_bucket": "ecommerceapp-edea7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292417144349:android:b548fbd602e56350e368f4",
+        "android_client_info": {
+          "package_name": "br.com.ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6vQ0v3MnQXK17QPf6y02Jqsx3zYzDdbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
