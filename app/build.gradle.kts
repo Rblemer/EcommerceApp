@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -11,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "br.com.ecommerce_app"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
@@ -32,11 +34,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -46,7 +48,7 @@ android {
     }
     packaging {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/*.kotlin_module"
         }
     }
 }
@@ -68,6 +70,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("androidx.compose.material:material:1.5.0")
 
     // Hilt
     implementation("com.google.dagger:hilt-android:2.47")
@@ -100,13 +103,13 @@ dependencies {
     // Navigation Component
     implementation("androidx.navigation:navigation-compose:2.7.0")
 
-    implementation("com.google.gms:google-services:4.4.0")
+//    implementation("com.google.gms:google-services:4.4.0")
 
     // Firebase
-    implementation("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
     implementation("com.google.firebase:firebase-messaging-ktx:23.3.1")
+    //noinspection BomWithoutPlatform
     implementation("com.google.firebase:firebase-bom:32.6.0")
-    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx:21.5.0")
     implementation("com.google.firebase:firebase-crashlytics-ktx:18.6.0")
     implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
@@ -149,4 +152,8 @@ dependencies {
 
     //Coil
     implementation("io.coil-kt:coil-compose:2.4.0")
+}
+
+kapt {
+    correctErrorTypes = true
 }
