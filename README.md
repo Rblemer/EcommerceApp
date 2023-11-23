@@ -1,5 +1,4 @@
 <h1 align="center">E-commerce App</h1></br>
-
 ## Tech stack & Open-source libraries
 
 - Minimum SDK level 24
